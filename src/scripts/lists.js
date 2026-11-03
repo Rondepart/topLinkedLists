@@ -70,6 +70,17 @@ class LinkedList {
     this.head = this.head.nextNode;
     return popped.value;
   }
+
+  contains(value) {
+    let currNode = this.head;
+
+    while(currNode !== null) {
+      if(currNode.value === value) return true;
+      currNode = currNode.nextNode;
+    }
+
+    return false;
+  }
 }
 
 class Node {

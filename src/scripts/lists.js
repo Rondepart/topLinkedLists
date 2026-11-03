@@ -62,6 +62,14 @@ class LinkedList {
     }
     return currNode === null ? undefined : currNode.value;
   }
+
+  pop() {
+    if(this.head === null) return undefined;
+
+    const popped = this.head;
+    this.head = this.head.nextNode;
+    return popped.value;
+  }
 }
 
 class Node {

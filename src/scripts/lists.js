@@ -81,6 +81,19 @@ class LinkedList {
 
     return false;
   }
+
+  findIndex(value) {
+    let i = 0;
+    let currNode = this.head;
+    while(currNode !== null) {
+      if(currNode.value === value) return i;
+      
+      currNode = currNode.nextNode;
+      i++;
+    }
+    return -1;
+  }
+
 }
 
 class Node {

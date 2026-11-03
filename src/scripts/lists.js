@@ -35,6 +35,11 @@ class LinkedList {
     }
     return sizeCtr;
   }
+
+  headValue() {
+    if (this.head === null) return undefined;
+    return this.head.value;
+  }
 }
 
 class Node {

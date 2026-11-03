@@ -18,6 +18,10 @@ class LinkedList {
     currNode.nextNode = newNode;
     return;
   }
+
+  prepend(value) {
+    this.head = new Node(value, this.head);
+  }
 }
 
 class Node {

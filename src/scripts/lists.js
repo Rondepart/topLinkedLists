@@ -105,6 +105,31 @@ class LinkedList {
     }
     return storedStr + "null";
   }
+
+  insertAt(index, ...values) {
+    if(index < 0 || index > this.size()) throw new RangeError("Index is out of range");
+    if (values.length === 0) return;
+
+    let prevNode = null;
+    let currNode = this.head;
+    let i = 0;
+    while(currNode !== null && i < index) {
+      prevNode = currNode;
+      currNode = currNode.nextNode;
+      i++;
+    }
+    
+    for(const value of values) {
+      const newNode = new Node(value);
+      if(prevNode === null) {
+        this.head = newNode;
+      } else {
+        prevNode.nextNode = newNode;
+      }  
+    prevNode = newNode;
+    }
+    prevNode.nextNode = currNode;
+  }
 }
 
 class Node {

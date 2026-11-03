@@ -50,6 +50,18 @@ class LinkedList {
     }
     return currNode.value;
   }
+
+  at(index) {
+    if (index < 0) return undefined;
+
+    let i = 0;
+    let currNode = this.head;
+    while(i < index && currNode !== null) {
+      currNode = currNode.nextNode;
+      i++;
+    }
+    return currNode === null ? undefined : currNode.value;
+  }
 }
 
 class Node {

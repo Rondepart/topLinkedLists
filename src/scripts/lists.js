@@ -130,6 +130,23 @@ class LinkedList {
     }
     prevNode.nextNode = currNode;
   }
+
+  removeAt(index) {
+    if(index < 0 || index >= this.size()) throw new RangeError("Index is out of range");
+
+    let prevNode = null;
+    let currNode = this.head;
+    for(let i = 0; i < index; i++) {
+      prevNode = currNode;
+      currNode = currNode.nextNode;
+    }
+
+    if(prevNode === null) {
+      this.head = currNode.nextNode;
+    } else {
+      prevNode.nextNode = currNode.nextNode;
+    }
+  }
 }
 
 class Node {

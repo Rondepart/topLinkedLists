@@ -22,6 +22,19 @@ class LinkedList {
   prepend(value) {
     this.head = new Node(value, this.head);
   }
+
+  size() {
+    if (this.head === null) return 0;
+
+    let sizeCtr = 0;
+    let currNode = this.head;
+    
+    while(currNode !==null) {
+      currNode = currNode.nextNode;
+      sizeCtr++;
+    }
+    return sizeCtr;
+  }
 }
 
 class Node {
